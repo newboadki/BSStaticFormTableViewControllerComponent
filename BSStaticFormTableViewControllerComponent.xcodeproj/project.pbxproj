@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008F769B18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */; };
+		008F769C18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */; };
 		00E3753018D2E91D005D20C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E3752F18D2E91D005D20C8 /* Foundation.framework */; };
 		00E3753E18D2E91D005D20C8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E3753D18D2E91D005D20C8 /* XCTest.framework */; };
 		00E3753F18D2E91D005D20C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E3752F18D2E91D005D20C8 /* Foundation.framework */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		008F766E18D32C4B0059CB55 /* BSStaticFormProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStaticFormProtocols.h; sourceTree = "<group>"; };
+		008F769918D458E70059CB55 /* BSEntryDetailValuePickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailValuePickerCell.h; sourceTree = "<group>"; };
+		008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailValuePickerCell.m; sourceTree = "<group>"; };
 		00E3752C18D2E91D005D20C8 /* libBSStaticFormTableViewControllerComponent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBSStaticFormTableViewControllerComponent.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E3752F18D2E91D005D20C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00E3753318D2E91D005D20C8 /* BSStaticFormTableViewControllerComponent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BSStaticFormTableViewControllerComponent-Prefix.pch"; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				00E3756618D2E95D005D20C8 /* BSEntryDateCell.h */,
 				00E3756718D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.h */,
 				00E3756818D2E95D005D20C8 /* BSEntrySegmentedOptionCell.h */,
+				008F769918D458E70059CB55 /* BSEntryDetailValuePickerCell.h */,
 				00E3756918D2E95D005D20C8 /* BSEntryTextDetail.h */,
 				00E3756A18D2E95D005D20C8 /* BSStaticTableViewCell.h */,
 			);
@@ -330,6 +335,7 @@
 			children = (
 				00E3757C18D2E95D005D20C8 /* BSEntryDateCell.m */,
 				00E3757D18D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m */,
+				008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */,
 				00E3757E18D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m */,
 				00E3757F18D2E95D005D20C8 /* BSEntryTextDetail.m */,
 				00E3758018D2E95D005D20C8 /* BSStaticTableViewCell+Protected.h */,
@@ -458,6 +464,7 @@
 				00E3759E18D2E95D005D20C8 /* BSStaticTableViewCellAction.m in Sources */,
 				00E3759C18D2E95D005D20C8 /* BSStaticTableViewAbstractAction.m in Sources */,
 				00E375A618D2E95D005D20C8 /* BSStaticTableViewCellAbstractEvent.m in Sources */,
+				008F769B18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */,
 				00E3759A18D2E95D005D20C8 /* BSStaticTableViewCell.m in Sources */,
 				00E3759618D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m in Sources */,
 				00E3759818D2E95D005D20C8 /* BSEntryTextDetail.m in Sources */,
@@ -486,6 +493,7 @@
 				00E3759118D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m in Sources */,
 				00E375AB18D2E95D005D20C8 /* BSStaticTableViewCellFoldingEvent.m in Sources */,
 				00E3759D18D2E95D005D20C8 /* BSStaticTableViewAbstractAction.m in Sources */,
+				008F769C18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */,
 				00E3759318D2E95D005D20C8 /* BSEntryDateCell.m in Sources */,
 				00E3758F18D2E95D005D20C8 /* BSStaticTableViewCellInfo.m in Sources */,
 				00E3754C18D2E91D005D20C8 /* BSStaticFormTableViewControllerComponentTests.m in Sources */,

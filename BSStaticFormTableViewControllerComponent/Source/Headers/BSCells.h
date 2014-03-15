@@ -11,3 +11,4 @@
 #import "Cells/BSEntrySegmentedOptionCell.h"
 #import "Cells/BSEntryTextDetail.h"
 #import "Cells/BSStaticTableViewCell.h"
+#import "Cells/BSEntryDetailValuePickerCell.h"
