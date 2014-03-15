@@ -16,6 +16,5 @@
 
 - (IBAction) entryDatePickerValueChanged:(UIDatePicker *)picker;
 - (IBAction) dateButtonPressed:(id)sender;
-- (void) setDate:(NSString*)date;
 
 @end

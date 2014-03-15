@@ -45,18 +45,25 @@
 
 - (void)updateValuesFromModel
 {
-    if (self.valueConvertor)
+    id modelValue = [self.entryModel valueForKey:self.modelProperty];
+    NSDate* date = nil;
+    
+    if (modelValue)
     {
-        self.datePicker.date = [self.valueConvertor cellValueForModelValue:[self.entryModel valueForKey:self.modelProperty]];
+        date = modelValue;
     }
     else
     {
-        NSDate *date = [self.entryModel valueForKey:self.modelProperty];
-        if (!date)
-        {
-            date = [NSDate date];
-        }
-        
+        date = [NSDate date];
+    }
+    
+    if (self.valueConvertor)
+    {
+        self.datePicker.date = [self.valueConvertor cellValueForModelValue:date];
+        [self setDateInTitle:[self.valueConvertor cellStringValueValueForModelValue:date]];
+    }
+    else
+    {
         self.datePicker.date = date;
         [self setDateInTitle:[date description]];
     }
@@ -70,17 +77,13 @@
     if (self.valueConvertor)
     {
         [self.entryModel setValue:[self.valueConvertor modelValueForCellValue:picker.date] forKey:self.modelProperty];
+        [self setDateInTitle:[self.valueConvertor cellStringValueValueForModelValue:picker.date]];
     }
     else
     {
         [self.entryModel setValue:picker.date forKey:self.modelProperty];
+        [self setDateInTitle:[picker.date description]];
     }
-
-    // Update title in button
-    
-    [self setDateInTitle:[[self.entryModel valueForKeyPath:self.modelProperty] description]];
-
-
 }
 
 
@@ -91,15 +94,6 @@
     BSStaticTableViewCellFoldingEvent *event =[[BSStaticTableViewCellFoldingEvent alloc] init];
     event.indexPath = self.indexPath;
     [self.delegate cell:self eventOccurred:event];
-}
-
-- (void) setDate:(NSString*)date
-{
-    // Button Value
-    [self setDateInTitle:date];
-    
-    // Picker value
-    self.datePicker.date = [self.valueConvertor cellValueForModelValue:date];
 }
 
 
@@ -114,9 +108,7 @@
 
 - (void) reset
 {
-    UIButton *button = (UIButton *)self.control;
-    [button setTitle:[self.valueConvertor modelValueForCellValue:[NSDate date]] forState:UIControlStateNormal];
-    
+    [self setDateInTitle:[self.valueConvertor cellStringValueValueForModelValue:[NSDate date]]];
 }
 
 #pragma mark - BSTableViewExpandableCell

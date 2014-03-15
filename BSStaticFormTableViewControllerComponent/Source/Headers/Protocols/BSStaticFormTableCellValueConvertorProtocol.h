@@ -15,17 +15,20 @@
 @protocol BSStaticFormTableCellValueConvertorProtocol <NSObject>
 
 /*!
- @param propertyName
- @param indexPath
  @param modelValue
  @retun The value that the cell will understand for the given modelValue in order to update it's visual state.*/
 - (id)cellValueForModelValue:(id)modelValue;
 
 /*!
- @param propertyName
- @param indexPath
- @param modelValue
+ @param cellValue
  @retun The value that the model will understand for the given cellValue.*/
 - (id)modelValueForCellValue:(id)cellValue;
+
+/*!
+ @param modelValue
+ @retun String representation of a model value.
+*/
+- (NSString *)cellStringValueValueForModelValue:(id)modelValue;
+
 
 @end
