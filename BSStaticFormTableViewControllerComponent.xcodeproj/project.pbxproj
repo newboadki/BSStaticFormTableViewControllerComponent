@@ -76,6 +76,7 @@
 		008F766E18D32C4B0059CB55 /* BSStaticFormProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStaticFormProtocols.h; sourceTree = "<group>"; };
 		008F769918D458E70059CB55 /* BSEntryDetailValuePickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailValuePickerCell.h; sourceTree = "<group>"; };
 		008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailValuePickerCell.m; sourceTree = "<group>"; };
+		008F76A018D4B1620059CB55 /* BSStaticFormTableViewAppearanceDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStaticFormTableViewAppearanceDelegateProtocol.h; sourceTree = "<group>"; };
 		00E3752C18D2E91D005D20C8 /* libBSStaticFormTableViewControllerComponent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBSStaticFormTableViewControllerComponent.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E3752F18D2E91D005D20C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00E3753318D2E91D005D20C8 /* BSStaticFormTableViewControllerComponent-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BSStaticFormTableViewControllerComponent-Prefix.pch"; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 				00E3757218D2E95D005D20C8 /* BSStaticFormTableViewSectionInfoProtocol.h */,
 				00E3757318D2E95D005D20C8 /* BSStaticTableViewCellDelegateProtocol.h */,
 				00E3757418D2E95D005D20C8 /* BSTableViewExpandableCell.h */,
+				008F76A018D4B1620059CB55 /* BSStaticFormTableViewAppearanceDelegateProtocol.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

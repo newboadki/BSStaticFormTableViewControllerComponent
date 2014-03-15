@@ -28,8 +28,9 @@
         _datePicker.frame = CGRectMake(0, self.bounds.size.height, _datePicker.bounds.size.width, _datePicker.bounds.size.height);
         _datePicker.datePickerMode = UIDatePickerModeDate;
         [_datePicker addTarget:self action:@selector(entryDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
-        
+        _datePicker.hidden = YES;
         [self addSubview:_datePicker];
+        
     }
     
     return self;
@@ -120,6 +121,8 @@
 
     // UIView returns a default color if no one set it
     [button setTitleColor:self.tintColor forState:UIControlStateNormal];
+    
+    self.datePicker.hidden = YES;
 }
 
 
@@ -130,6 +133,8 @@
 
     // The superclass defaults to a color if not set
     [button setTitleColor:self.selectedTintColor forState:UIControlStateNormal];
+    
+    self.datePicker.hidden = NO;
 }
 
 

@@ -24,8 +24,10 @@
         _pickerView.frame = CGRectMake(0, self.bounds.size.height, _pickerView.bounds.size.width, _pickerView.bounds.size.height);
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
-
+        
+        _pickerView.hidden = YES;
         [self addSubview:_pickerView];
+        
     }
     
     return self;
@@ -133,6 +135,9 @@
     
     // UIView returns a default color if no one set it
     [button setTitleColor:self.tintColor forState:UIControlStateNormal];
+    
+    
+    self.pickerView.hidden = YES;
 }
 
 
@@ -145,6 +150,8 @@
     [button setTitleColor:self.selectedTintColor forState:UIControlStateNormal];
     [self.pickerView reloadAllComponents];
     [self updateValuesFromModel];
+    
+    self.pickerView.hidden = NO;
 }
 
 

@@ -178,6 +178,9 @@
     // Apply pending actions
     NSArray *pendingActions = [self.pendingActions actionsForIndexPath:indexPath];
     [self applyActionsInArray:pendingActions];
+    
+    // Apply appearance
+    [self.appearanceDelegate themeTableViewCell:cell];
 }
 
 

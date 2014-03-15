@@ -11,3 +11,4 @@
 #import "Protocols/BSStaticFormTableViewSectionInfoProtocol.h"
 #import "Protocols/BSStaticTableViewCellDelegateProtocol.h"
 #import "Protocols/BSTableViewExpandableCell.h"
+#import "Protocols/BSStaticFormTableViewAppearanceDelegateProtocol.h"
