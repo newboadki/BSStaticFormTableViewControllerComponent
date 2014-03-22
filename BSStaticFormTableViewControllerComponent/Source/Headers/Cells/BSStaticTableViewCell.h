@@ -11,7 +11,7 @@
 #import "../Events/BSStaticTableViewCellAbstractEvent.h"
 #import "../BSStaticTableViewComponentConstants.h"
 #import "../Protocols/BSStaticFormTableCellValueConvertorProtocol.h"
-#import "../Protocols/BSTableViewExpandableCell.h"
+#import "../Protocols/BSTableViewSelectableCellProtocol.h"
 #import "../Protocols/BSStaticTableViewCellDelegateProtocol.h"
 
 @interface BSStaticTableViewCell : UITableViewCell

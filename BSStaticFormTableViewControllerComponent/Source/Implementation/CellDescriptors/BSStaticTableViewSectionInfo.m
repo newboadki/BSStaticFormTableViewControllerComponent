@@ -10,7 +10,7 @@
 
 @implementation BSStaticTableViewSectionInfo
 
-- (instancetype)initWithSection:(NSInteger)section cellsInfo:(NSArray *)cellsInfo
+- (instancetype)initWithSection:(NSInteger)section cellsInfo:(NSMutableArray *)cellsInfo
 {
     self = [super init];
     

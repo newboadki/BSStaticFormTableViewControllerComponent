@@ -82,7 +82,8 @@
 
 @interface BSStaticFormTableViewController ()
 
-/*! List of index paths that have cells that are in an expanded state.*/
+/*! List of index paths that have been added as a consequence of an event 
+ on another row. These events are reversable, meaning that these rows can be removed.*/
 @property (nonatomic, strong) NSMutableArray *unfoldedCells;
 
 /*! List of all the cell actions that have not been executed yet. The main reason
@@ -188,11 +189,11 @@
 {
     if ([self.unfoldedCells containsObject:indexPath])
     {
-        return 250.0f;
+        return 162.0f;
     }
     else
     {
-        return 44.0;
+        return 44.0f;
     }
 }
 
@@ -276,17 +277,93 @@
         {
             [self applyTableViewCellAction:(BSStaticTableViewCellAction *)action];
         }
-        else if ([action isKindOfClass:[BSStaticTableViewToggleExpandableCellsAction class]])
-        {
-            [self applyToggleExpandableCellsAction:(BSStaticTableViewToggleExpandableCellsAction *)action];
-        }
         else if ([action isKindOfClass:[BSStaticTableViewDismissYourselfAction class]])
         {
             [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         }
+        else if ([action isKindOfClass:[BSStaticTableViewInsertRowAction class]])
+        {
+            [self applyInsertRowAction:(BSStaticTableViewInsertRowAction *)action];
+        }
+        else if ([action isKindOfClass:[BSStaticTableViewRemoveRowAction class]])
+        {
+            [self applyRemoveRowAction:(BSStaticTableViewRemoveRowAction *)action];
+        }
+        else if ([action isKindOfClass:[BSStaticTableViewSelectRowAction class]])
+        {
+            [self applySelectRowAction:(BSStaticTableViewSelectRowAction *)action];
+        }
+        else if ([action isKindOfClass:[BSStaticTableViewDeselectRowAction class]])
+        {
+            [self applyDeselectRowAction:(BSStaticTableViewDeselectRowAction *)action];
+        }
+        else if ([action isKindOfClass:[BSStaticTableViewReloadCellFromModel class]])
+        {
+            [self applyReloadRowFromModelAction:(BSStaticTableViewReloadCellFromModel *)action];
+        }
+        
+        
+
     }
 }
 
+-(void)applyInsertRowAction:(BSStaticTableViewInsertRowAction *)action
+{
+    // Save that we inserted a cell at the index path
+    NSIndexPath *ip = action.indexPath;
+    [self.unfoldedCells addObject:ip];
+    
+    // Resign first responders
+    for (UITableViewCell *c in self.tableView.visibleCells)
+    {
+        [c resignFirstResponder];
+    }
+    
+    // insert the cell (data source already updated)
+    [self.tableView insertRowsAtIndexPaths:@[action.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+
+-(void)applyRemoveRowAction:(BSStaticTableViewRemoveRowAction *)action
+{
+    // Remove the cell from the array
+    NSIndexPath *ip = action.indexPath;
+    [self.unfoldedCells removeObject:ip];
+    
+    // remove the cell (data source already updated)
+    [self.tableView deleteRowsAtIndexPaths:@[ip] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)applySelectRowAction:(BSStaticTableViewSelectRowAction *)action
+{
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    if (cellToPerformActionOn)
+    {
+        if ([cellToPerformActionOn conformsToProtocol:@protocol(BSTableViewSelectableCellProtocol)])
+        {
+            [cellToPerformActionOn performSelector:@selector(setUpForSelectedState)];
+        }
+    }
+}
+
+- (void)applyDeselectRowAction:(BSStaticTableViewDeselectRowAction *)action
+{
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    if (cellToPerformActionOn)
+    {
+        if ([cellToPerformActionOn conformsToProtocol:@protocol(BSTableViewSelectableCellProtocol)])
+        {
+            [cellToPerformActionOn performSelector:@selector(setUpForDeselectedState)];
+        }
+    }
+}
+
+
+- (void)applyReloadRowFromModelAction:(BSStaticTableViewReloadCellFromModel *)action
+{
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    [cellToPerformActionOn updateValuesFromModel];
+}
 
 - (void)applyTableViewCellAction:(BSStaticTableViewCellAction *)action
 {
@@ -296,44 +373,13 @@
         if (cellToPerformActionOn)
         {
             [cellToPerformActionOn performSelector:action.selector withObject:action.object];
-            [self.pendingActions removeAction:action forIndexPath:ip];
+            //[self.pendingActions removeAction:action forIndexPath:ip];
         }
         else
         {
             [self.pendingActions addAction:action forIndexPath:ip];
         }
     }
-}
-
-
-- (void)applyToggleExpandableCellsAction:(BSStaticTableViewToggleExpandableCellsAction *)action
-{
-    for (NSIndexPath *ip in action.indexPaths)
-    {
-        BSStaticTableViewCell *cell = (BSStaticTableViewCell *)[self.tableView cellForRowAtIndexPath:ip];
-        if ([self.unfoldedCells containsObject:ip])
-        {
-            [cell performSelector:@selector(setUpForFoldedState)];
-            [self.unfoldedCells removeObject:ip];
-        }
-        else
-        {
-            if ([cell conformsToProtocol:@protocol(BSTableViewExpandableCell)])
-            {
-                [cell performSelector:@selector(setUpForUnFoldedState)];
-                [self.unfoldedCells addObject:ip];
-                
-                for (UITableViewCell *c in self.tableView.visibleCells)
-                {
-                    [c resignFirstResponder];
-                }
-            }
-        }
-    }
-    
-    // Animate the cells
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
 }
 
 @end

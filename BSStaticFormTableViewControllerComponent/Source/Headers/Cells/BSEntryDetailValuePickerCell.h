@@ -8,15 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BSStaticTableViewCell.h"
-#import "../Protocols/BSTableViewExpandableCell.h"
 
-
-@interface BSEntryDetailValuePickerCell : BSStaticTableViewCell <UIPickerViewDelegate, UIPickerViewDataSource, BSTableViewExpandableCell>
-
-@property (nonatomic, strong) UIPickerView *pickerView;
+@interface BSEntryDetailValuePickerCell : BSStaticTableViewCell <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) NSArray *options;
-
-- (IBAction) controlPressed:(id)sender;
 
 @end

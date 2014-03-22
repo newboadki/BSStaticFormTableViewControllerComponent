@@ -11,3 +11,9 @@
 #import "Actions/BSStaticTableViewToggleExpandableCellsAction.h"
 #import "Actions/BSStaticTableViewAbstractAction.h"
 #import "Actions/BSStaticTableViewCellAction.h"
+#import "Actions/BSStaticTableViewInsertRowAction.h"
+#import "Actions/BSStaticTableViewRemoveRowAction.h"
+#import "Actions/BSStaticTableViewReloadCellFromModel.h"
+#import "Actions/BSStaticTableViewSelectRowAction.h"
+#import "Actions/BSStaticTableViewDeselectRowAction.h"
+

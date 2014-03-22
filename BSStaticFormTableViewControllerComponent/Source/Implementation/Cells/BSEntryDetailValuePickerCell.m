@@ -13,27 +13,6 @@
 
 @implementation BSEntryDetailValuePickerCell
 
-#pragma mark - Initializers
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self)
-    {
-        _pickerView = [[UIPickerView alloc] init];
-        _pickerView.frame = CGRectMake(0, self.bounds.size.height, _pickerView.bounds.size.width, _pickerView.bounds.size.height);
-        _pickerView.delegate = self;
-        _pickerView.dataSource = self;
-        
-        _pickerView.hidden = YES;
-        [self addSubview:_pickerView];
-        
-    }
-    
-    return self;
-}
-
-
 
 #pragma mark - from BSStaticTableViewCell
 
@@ -44,30 +23,24 @@
     self.entryModel = model;
 
     [self setOptions:cellInfo.extraParams[@"options"]];
-}
-
-- (IBAction) controlPressed:(id)sender
-{
-    // The view controller is the only one that could know the state of the cell
-    // because cells are reused so their values are not reliable unless they get set by the view controller
-    BSStaticTableViewCellFoldingEvent *event =[[BSStaticTableViewCellFoldingEvent alloc] init];
-    event.indexPath = self.indexPath;
-    [self.delegate cell:self eventOccurred:event];
+    UIPickerView *pickerView = (UIPickerView *)[self viewWithTag:333];
+    pickerView.delegate = self; //why isn't IB doing this?
+    pickerView.dataSource = self;
+    [pickerView reloadAllComponents];
 }
 
 
 - (void)updateValuesFromModel
 {
+    UIPickerView *pickerView = (UIPickerView *)[self viewWithTag:333];
     id modelValue = [self.entryModel valueForKey:self.modelProperty];
     if (self.valueConvertor)
     {
-        [self.pickerView selectRow:[[self.valueConvertor cellValueForModelValue:modelValue] intValue] inComponent:0 animated:NO];
-        [self setDateInTitle:[self.valueConvertor cellStringValueValueForModelValue:modelValue]];
+        [pickerView selectRow:[[self.valueConvertor cellValueForModelValue:modelValue] intValue] inComponent:0 animated:NO];
     }
     else
     {
-        [self.pickerView selectRow:(int)modelValue inComponent:0 animated:NO];
-        [self setDateInTitle:self.options[(int)modelValue]];
+        [pickerView selectRow:(int)modelValue inComponent:0 animated:NO];
     }
 }
 
@@ -85,12 +58,10 @@
     {
         id modelValue = [self.valueConvertor modelValueForCellValue:@(row)];
         [self.entryModel setValue:modelValue forKey:self.modelProperty];
-        [self setDateInTitle:[self.valueConvertor cellStringValueValueForModelValue:modelValue]];
     }
     else
     {
         [self.entryModel setValue:@(row) forKey:self.modelProperty];
-        [self setDateInTitle:self.options[row]];
     }    
     
     
@@ -100,15 +71,6 @@
     [self.delegate cell:self eventOccurred:event];
 
 }
-
-- (void)setDateInTitle:(NSString *)date
-{
-    UIButton *button = (UIButton *)self.control;
-    [button setTitle:date forState:UIControlStateNormal];
-    [button setTitle:date forState:UIControlStateHighlighted];
-    [button setTitle:date forState:UIControlStateSelected];
-}
-
 
 
 #pragma mark - UIPickerViewDataSource
@@ -123,36 +85,5 @@
 {
     return [self.options count];
 }
-
-
-
-#pragma mark - BSTableViewExpandableCell
-
-- (void)setUpForFoldedState
-{
-    // Color of the button when not selected
-    UIButton *button = (UIButton *)self.control;
-    
-    // UIView returns a default color if no one set it
-    [button setTitleColor:self.tintColor forState:UIControlStateNormal];
-    
-    
-    self.pickerView.hidden = YES;
-}
-
-
-- (void)setUpForUnFoldedState
-{
-    // Color of the button when selected
-    UIButton *button = (UIButton *)self.control;
-    
-    // The superclass defaults to a color if not set
-    [button setTitleColor:self.selectedTintColor forState:UIControlStateNormal];
-    [self.pickerView reloadAllComponents];
-    [self updateValuesFromModel];
-    
-    self.pickerView.hidden = NO;
-}
-
 
 @end

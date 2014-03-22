@@ -17,10 +17,10 @@
 @property (nonatomic, assign) NSInteger section;
 
 /*! List of instances of BSStaticTableViewCellInfo.*/
-@property (nonatomic, strong) NSArray *cellClassesInfo;
+@property (nonatomic, strong) NSMutableArray *cellClassesInfo;
 
 
-- (instancetype)initWithSection:(NSInteger)section cellsInfo:(NSArray *)cellsInfo;
+- (instancetype)initWithSection:(NSInteger)section cellsInfo:(NSMutableArray *)cellsInfo;
 
 @end
 

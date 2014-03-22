@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BSTableViewExpandableCell <NSObject>
+@protocol BSTableViewSelectableCellProtocol <NSObject>
 
-- (void)setUpForFoldedState;
+- (void)setUpForDeselectedState;
 
-- (void)setUpForUnFoldedState;
+- (void)setUpForSelectedState;
 
 @end

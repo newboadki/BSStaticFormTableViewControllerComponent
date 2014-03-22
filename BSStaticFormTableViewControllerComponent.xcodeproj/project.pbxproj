@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001ECA8618DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8118DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m */; };
+		001ECA8718DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8118DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m */; };
+		001ECA8818DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8218DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m */; };
+		001ECA8918DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8218DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m */; };
+		001ECA8A18DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8318DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m */; };
+		001ECA8B18DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8318DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m */; };
+		001ECA8C18DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8418DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m */; };
+		001ECA8D18DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8418DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m */; };
+		001ECA8E18DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8518DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m */; };
+		001ECA8F18DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA8518DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m */; };
+		001ECA9218DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA9018DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m */; };
+		001ECA9318DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA9018DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m */; };
+		001ECA9418DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA9118DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m */; };
+		001ECA9518DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001ECA9118DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m */; };
 		008F769B18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */; };
 		008F769C18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */; };
 		00E3753018D2E91D005D20C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E3752F18D2E91D005D20C8 /* Foundation.framework */; };
@@ -20,8 +34,6 @@
 		00E3758F18D2E95D005D20C8 /* BSStaticTableViewCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757918D2E95D005D20C8 /* BSStaticTableViewCellInfo.m */; };
 		00E3759018D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757A18D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m */; };
 		00E3759118D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757A18D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m */; };
-		00E3759218D2E95D005D20C8 /* BSEntryDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757C18D2E95D005D20C8 /* BSEntryDateCell.m */; };
-		00E3759318D2E95D005D20C8 /* BSEntryDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757C18D2E95D005D20C8 /* BSEntryDateCell.m */; };
 		00E3759418D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757D18D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m */; };
 		00E3759518D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757D18D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m */; };
 		00E3759618D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E3757E18D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m */; };
@@ -73,6 +85,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0016B2C818D874F100EC84B9 /* BSEntryDetailDescriptionAndButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailDescriptionAndButtonCell.h; sourceTree = "<group>"; };
+		0016B2CC18D8CEAE00EC84B9 /* BSEntryDetailDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailDatePickerCell.h; sourceTree = "<group>"; };
+		0016B2D018D8F60700EC84B9 /* BSStaticTableViewInsertRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewInsertRowAction.h; sourceTree = "<group>"; };
+		0016B2D418D8FCEC00EC84B9 /* BSStaticTableViewReloadCellFromModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewReloadCellFromModel.h; sourceTree = "<group>"; };
+		0016B2D818DA46DE00EC84B9 /* BSStaticTableViewRemoveRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewRemoveRowAction.h; sourceTree = "<group>"; };
+		0016B2DC18DA4C5200EC84B9 /* BSStaticTableViewSelectRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewSelectRowAction.h; sourceTree = "<group>"; };
+		0016B2E018DA4C6100EC84B9 /* BSStaticTableViewDeselectRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewDeselectRowAction.h; sourceTree = "<group>"; };
+		001ECA8118DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewDeselectRowAction.m; sourceTree = "<group>"; };
+		001ECA8218DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewInsertRowAction.m; sourceTree = "<group>"; };
+		001ECA8318DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewReloadCellFromModel.m; sourceTree = "<group>"; };
+		001ECA8418DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewRemoveRowAction.m; sourceTree = "<group>"; };
+		001ECA8518DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewSelectRowAction.m; sourceTree = "<group>"; };
+		001ECA9018DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailDatePickerCell.m; sourceTree = "<group>"; };
+		001ECA9118DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailDescriptionAndButtonCell.m; sourceTree = "<group>"; };
 		008F766E18D32C4B0059CB55 /* BSStaticFormProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStaticFormProtocols.h; sourceTree = "<group>"; };
 		008F769918D458E70059CB55 /* BSEntryDetailValuePickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailValuePickerCell.h; sourceTree = "<group>"; };
 		008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailValuePickerCell.m; sourceTree = "<group>"; };
@@ -98,7 +124,6 @@
 		00E3756118D2E95D005D20C8 /* BSTableViewEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewEvents.h; sourceTree = "<group>"; };
 		00E3756318D2E95D005D20C8 /* BSStaticTableViewCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewCellInfo.h; sourceTree = "<group>"; };
 		00E3756418D2E95D005D20C8 /* BSStaticTableViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewSectionInfo.h; sourceTree = "<group>"; };
-		00E3756618D2E95D005D20C8 /* BSEntryDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntryDateCell.h; sourceTree = "<group>"; };
 		00E3756718D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntryDetailSingleButtonCell.h; sourceTree = "<group>"; };
 		00E3756818D2E95D005D20C8 /* BSEntrySegmentedOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntrySegmentedOptionCell.h; sourceTree = "<group>"; };
 		00E3756918D2E95D005D20C8 /* BSEntryTextDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEntryTextDetail.h; sourceTree = "<group>"; };
@@ -110,11 +135,10 @@
 		00E3757118D2E95D005D20C8 /* BSStaticFormTableViewCellActionDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticFormTableViewCellActionDataSourceProtocol.h; sourceTree = "<group>"; };
 		00E3757218D2E95D005D20C8 /* BSStaticFormTableViewSectionInfoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticFormTableViewSectionInfoProtocol.h; sourceTree = "<group>"; };
 		00E3757318D2E95D005D20C8 /* BSStaticTableViewCellDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticTableViewCellDelegateProtocol.h; sourceTree = "<group>"; };
-		00E3757418D2E95D005D20C8 /* BSTableViewExpandableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewExpandableCell.h; sourceTree = "<group>"; };
+		00E3757418D2E95D005D20C8 /* BSTableViewSelectableCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTableViewSelectableCellProtocol.h; sourceTree = "<group>"; };
 		00E3757618D2E95D005D20C8 /* BSStaticFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStaticFormTableViewController.h; sourceTree = "<group>"; };
 		00E3757918D2E95D005D20C8 /* BSStaticTableViewCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewCellInfo.m; sourceTree = "<group>"; };
 		00E3757A18D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStaticTableViewSectionInfo.m; sourceTree = "<group>"; };
-		00E3757C18D2E95D005D20C8 /* BSEntryDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDateCell.m; sourceTree = "<group>"; };
 		00E3757D18D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryDetailSingleButtonCell.m; sourceTree = "<group>"; };
 		00E3757E18D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntrySegmentedOptionCell.m; sourceTree = "<group>"; };
 		00E3757F18D2E95D005D20C8 /* BSEntryTextDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEntryTextDetail.m; sourceTree = "<group>"; };
@@ -254,6 +278,11 @@
 				00E3755A18D2E95D005D20C8 /* BSStaticTableViewDismissYourselfAction.h */,
 				00E3755B18D2E95D005D20C8 /* BSStaticTableViewResignFirstResponderAction.h */,
 				00E3755C18D2E95D005D20C8 /* BSStaticTableViewToggleExpandableCellsAction.h */,
+				0016B2D018D8F60700EC84B9 /* BSStaticTableViewInsertRowAction.h */,
+				0016B2D818DA46DE00EC84B9 /* BSStaticTableViewRemoveRowAction.h */,
+				0016B2E018DA4C6100EC84B9 /* BSStaticTableViewDeselectRowAction.h */,
+				0016B2D418D8FCEC00EC84B9 /* BSStaticTableViewReloadCellFromModel.h */,
+				0016B2DC18DA4C5200EC84B9 /* BSStaticTableViewSelectRowAction.h */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -270,8 +299,9 @@
 		00E3756518D2E95D005D20C8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				00E3756618D2E95D005D20C8 /* BSEntryDateCell.h */,
+				0016B2CC18D8CEAE00EC84B9 /* BSEntryDetailDatePickerCell.h */,
 				00E3756718D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.h */,
+				0016B2C818D874F100EC84B9 /* BSEntryDetailDescriptionAndButtonCell.h */,
 				00E3756818D2E95D005D20C8 /* BSEntrySegmentedOptionCell.h */,
 				008F769918D458E70059CB55 /* BSEntryDetailValuePickerCell.h */,
 				00E3756918D2E95D005D20C8 /* BSEntryTextDetail.h */,
@@ -297,7 +327,7 @@
 				00E3757118D2E95D005D20C8 /* BSStaticFormTableViewCellActionDataSourceProtocol.h */,
 				00E3757218D2E95D005D20C8 /* BSStaticFormTableViewSectionInfoProtocol.h */,
 				00E3757318D2E95D005D20C8 /* BSStaticTableViewCellDelegateProtocol.h */,
-				00E3757418D2E95D005D20C8 /* BSTableViewExpandableCell.h */,
+				00E3757418D2E95D005D20C8 /* BSTableViewSelectableCellProtocol.h */,
 				008F76A018D4B1620059CB55 /* BSStaticFormTableViewAppearanceDelegateProtocol.h */,
 			);
 			path = Protocols;
@@ -335,8 +365,9 @@
 		00E3757B18D2E95D005D20C8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				00E3757C18D2E95D005D20C8 /* BSEntryDateCell.m */,
 				00E3757D18D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m */,
+				001ECA9018DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m */,
+				001ECA9118DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m */,
 				008F769A18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m */,
 				00E3757E18D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m */,
 				00E3757F18D2E95D005D20C8 /* BSEntryTextDetail.m */,
@@ -349,6 +380,11 @@
 		00E3758218D2E95D005D20C8 /* TableViewActions */ = {
 			isa = PBXGroup;
 			children = (
+				001ECA8118DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m */,
+				001ECA8218DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m */,
+				001ECA8318DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m */,
+				001ECA8418DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m */,
+				001ECA8518DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m */,
 				00E3758318D2E95D005D20C8 /* BSStaticTableViewAbstractAction.m */,
 				00E3758418D2E95D005D20C8 /* BSStaticTableViewCellAction.m */,
 				00E3758518D2E95D005D20C8 /* BSStaticTableViewDismissYourselfAction.m */,
@@ -459,21 +495,27 @@
 			files = (
 				00E375AA18D2E95D005D20C8 /* BSStaticTableViewCellFoldingEvent.m in Sources */,
 				00E375A018D2E95D005D20C8 /* BSStaticTableViewDismissYourselfAction.m in Sources */,
+				001ECA9218DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m in Sources */,
 				00E3759018D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m in Sources */,
 				00E3758E18D2E95D005D20C8 /* BSStaticTableViewCellInfo.m in Sources */,
 				00E375A218D2E95D005D20C8 /* BSStaticTableViewResignFirstResponderAction.m in Sources */,
+				001ECA8A18DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m in Sources */,
 				00E375A418D2E95D005D20C8 /* BSStaticTableViewToggleExpandableCellsAction.m in Sources */,
 				00E3759E18D2E95D005D20C8 /* BSStaticTableViewCellAction.m in Sources */,
 				00E3759C18D2E95D005D20C8 /* BSStaticTableViewAbstractAction.m in Sources */,
+				001ECA8618DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m in Sources */,
 				00E375A618D2E95D005D20C8 /* BSStaticTableViewCellAbstractEvent.m in Sources */,
 				008F769B18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */,
 				00E3759A18D2E95D005D20C8 /* BSStaticTableViewCell.m in Sources */,
 				00E3759618D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m in Sources */,
 				00E3759818D2E95D005D20C8 /* BSEntryTextDetail.m in Sources */,
 				00E375AC18D2E95D005D20C8 /* BSStaticFormTableViewController.m in Sources */,
+				001ECA9418DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m in Sources */,
+				001ECA8C18DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m in Sources */,
+				001ECA8818DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m in Sources */,
+				001ECA8E18DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m in Sources */,
 				00E3759418D2E95D005D20C8 /* BSEntryDetailSingleButtonCell.m in Sources */,
 				00E375A818D2E95D005D20C8 /* BSStaticTableViewCellChangeOfValueEvent.m in Sources */,
-				00E3759218D2E95D005D20C8 /* BSEntryDateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,18 +529,24 @@
 				00E3759718D2E95D005D20C8 /* BSEntrySegmentedOptionCell.m in Sources */,
 				00E375A318D2E95D005D20C8 /* BSStaticTableViewResignFirstResponderAction.m in Sources */,
 				00E375A118D2E95D005D20C8 /* BSStaticTableViewDismissYourselfAction.m in Sources */,
+				001ECA9318DD8AFE00B7D027 /* BSEntryDetailDatePickerCell.m in Sources */,
 				00E375AD18D2E95D005D20C8 /* BSStaticFormTableViewController.m in Sources */,
 				00E3759F18D2E95D005D20C8 /* BSStaticTableViewCellAction.m in Sources */,
 				00E375A918D2E95D005D20C8 /* BSStaticTableViewCellChangeOfValueEvent.m in Sources */,
 				00E375A718D2E95D005D20C8 /* BSStaticTableViewCellAbstractEvent.m in Sources */,
 				00E375A518D2E95D005D20C8 /* BSStaticTableViewToggleExpandableCellsAction.m in Sources */,
+				001ECA8B18DD8AC000B7D027 /* BSStaticTableViewReloadCellFromModel.m in Sources */,
 				00E3759118D2E95D005D20C8 /* BSStaticTableViewSectionInfo.m in Sources */,
+				001ECA8F18DD8AC000B7D027 /* BSStaticTableViewSelectRowAction.m in Sources */,
 				00E375AB18D2E95D005D20C8 /* BSStaticTableViewCellFoldingEvent.m in Sources */,
 				00E3759D18D2E95D005D20C8 /* BSStaticTableViewAbstractAction.m in Sources */,
 				008F769C18D4591A0059CB55 /* BSEntryDetailValuePickerCell.m in Sources */,
-				00E3759318D2E95D005D20C8 /* BSEntryDateCell.m in Sources */,
 				00E3758F18D2E95D005D20C8 /* BSStaticTableViewCellInfo.m in Sources */,
+				001ECA8718DD8AC000B7D027 /* BSStaticTableViewDeselectRowAction.m in Sources */,
+				001ECA8918DD8AC000B7D027 /* BSStaticTableViewInsertRowAction.m in Sources */,
+				001ECA8D18DD8AC000B7D027 /* BSStaticTableViewRemoveRowAction.m in Sources */,
 				00E3754C18D2E91D005D20C8 /* BSStaticFormTableViewControllerComponentTests.m in Sources */,
+				001ECA9518DD8AFE00B7D027 /* BSEntryDetailDescriptionAndButtonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

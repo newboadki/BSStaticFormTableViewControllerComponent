@@ -38,6 +38,4 @@
  */
 - (id<BSStaticFormTableCellValueConvertorProtocol>)valueConvertorForCellAtIndexPath:(NSIndexPath *)indexPath;
 
-//- (NSIndexPath *)indexPathForCellWithPropertyName:(NSString *)propertyName;
-
 @end
