@@ -261,7 +261,12 @@
 
 - (void)cell:(UITableViewCell *)cell eventOccurred:(BSStaticTableViewCellAbstractEvent *)event
 {
-    NSArray *actions = [self.cellActionDataSource actionsForEvent:event inCellAtIndexPath:event.indexPath];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (!indexPath)
+    {
+        indexPath = event.indexPath;
+    }
+    NSArray *actions = [self.cellActionDataSource actionsForEvent:event inCellAtIndexPath:indexPath];
     [self applyActionsInArray:actions];
 }
 
@@ -320,7 +325,9 @@
     }
     
     // insert the cell (data source already updated)
+    [self updateUnfoldedCellsIndexpathsAtIndexPath:action.indexPath afterInsertion:YES]; // Needs to happen before, because deleteRowsAtIndexPaths reloads the table which calls height for cell at ip
     [self.tableView insertRowsAtIndexPaths:@[action.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
 }
 
 
@@ -331,8 +338,11 @@
     [self.unfoldedCells removeObject:ip];
     
     // remove the cell (data source already updated)
+    [self updateUnfoldedCellsIndexpathsAtIndexPath:ip afterInsertion:NO]; // Needs to happen before, because deleteRowsAtIndexPaths reloads the table which calls height for cell at ip
     [self.tableView deleteRowsAtIndexPaths:@[ip] withRowAnimation:UITableViewRowAnimationFade];
+    
 }
+
 
 - (void)applySelectRowAction:(BSStaticTableViewSelectRowAction *)action
 {
@@ -348,7 +358,7 @@
 
 - (void)applyDeselectRowAction:(BSStaticTableViewDeselectRowAction *)action
 {
-    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView cellForRowAtIndexPath:action.indexPath];
     if (cellToPerformActionOn)
     {
         if ([cellToPerformActionOn conformsToProtocol:@protocol(BSTableViewSelectableCellProtocol)])
@@ -364,6 +374,7 @@
     BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
     [cellToPerformActionOn updateValuesFromModel];
 }
+
 
 - (void)applyTableViewCellAction:(BSStaticTableViewCellAction *)action
 {
@@ -381,5 +392,32 @@
         }
     }
 }
+
+
+- (void)updateUnfoldedCellsIndexpathsAtIndexPath:(NSIndexPath *)indexPath afterInsertion:(BOOL)isInsertion
+{
+    NSMutableArray *modifiedArray = [NSMutableArray array];
+    
+    for (NSIndexPath *ip in self.unfoldedCells)
+    {
+        if ( (indexPath.section == ip.section) && (indexPath.row < ip.row) )
+        {
+            NSInteger newRowIndex = (ip.row - 1); // default is deletion
+            if (isInsertion)
+            {
+                newRowIndex = (ip.row + 1);
+            }
+            NSIndexPath *modifiedIndexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:ip.section];
+            [modifiedArray addObject:modifiedIndexPath];
+        }
+        else
+        {
+            [modifiedArray addObject:ip];
+        }
+    }
+    
+    self.unfoldedCells = modifiedArray;
+}
+
 
 @end
