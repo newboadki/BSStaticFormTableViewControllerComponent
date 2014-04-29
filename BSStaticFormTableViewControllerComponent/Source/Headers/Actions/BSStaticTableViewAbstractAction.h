@@ -10,4 +10,8 @@
 
 @interface BSStaticTableViewAbstractAction : NSObject
 
+@property (nonatomic, strong) NSArray *indexPathsToApplyActionTo; // To apply action to
+
+- (instancetype)initWithIndexPaths:(NSArray *)indexPaths;
+
 @end

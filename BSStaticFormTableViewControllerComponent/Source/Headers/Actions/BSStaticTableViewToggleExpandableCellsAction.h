@@ -11,8 +11,4 @@
 
 @interface BSStaticTableViewToggleExpandableCellsAction : BSStaticTableViewAbstractAction
 
-@property (nonatomic, strong) NSArray *indexPaths;
-
-- (instancetype)initWithIndexPaths:(NSArray *)indexPaths;
-
 @end

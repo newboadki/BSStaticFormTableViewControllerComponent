@@ -10,16 +10,4 @@
 
 @implementation BSStaticTableViewToggleExpandableCellsAction
 
-- (instancetype)initWithIndexPaths:(NSArray *)indexPaths
-{
-    self = [super init];
-    
-    if (self)
-    {
-        _indexPaths = indexPaths;
-    }
-    
-    return self;
-}
-
 @end

@@ -10,4 +10,16 @@
 
 @implementation BSStaticTableViewAbstractAction
 
+- (instancetype)initWithIndexPaths:(NSArray *)indexPaths
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _indexPathsToApplyActionTo = indexPaths;
+    }
+    
+    return self;
+}
+
 @end

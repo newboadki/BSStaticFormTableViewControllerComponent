@@ -10,8 +10,4 @@
 
 @interface BSStaticTableViewRemoveRowAction : BSStaticTableViewAbstractAction
 
-@property (nonatomic, strong) NSIndexPath *indexPath;
-
-- (instancetype)initWithIndexPath:(NSIndexPath *)indexPath;
-
 @end

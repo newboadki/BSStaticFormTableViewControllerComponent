@@ -315,7 +315,7 @@
 -(void)applyInsertRowAction:(BSStaticTableViewInsertRowAction *)action
 {
     // Save that we inserted a cell at the index path
-    NSIndexPath *ip = action.indexPath;
+    NSIndexPath *ip = action.indexPathsToApplyActionTo.firstObject;
     [self.unfoldedCells addObject:ip];
     
     // Resign first responders
@@ -325,8 +325,8 @@
     }
     
     // insert the cell (data source already updated)
-    [self updateUnfoldedCellsIndexpathsAtIndexPath:action.indexPath afterInsertion:YES]; // Needs to happen before, because deleteRowsAtIndexPaths reloads the table which calls height for cell at ip
-    [self.tableView insertRowsAtIndexPaths:@[action.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self updateUnfoldedCellsIndexpathsAtIndexPath:ip afterInsertion:YES]; // Needs to happen before, because deleteRowsAtIndexPaths reloads the table which calls height for cell at ip
+    [self.tableView insertRowsAtIndexPaths:@[ip] withRowAnimation:UITableViewRowAnimationFade];
     
 }
 
@@ -334,7 +334,7 @@
 -(void)applyRemoveRowAction:(BSStaticTableViewRemoveRowAction *)action
 {
     // Remove the cell from the array
-    NSIndexPath *ip = action.indexPath;
+    NSIndexPath *ip = action.indexPathsToApplyActionTo.firstObject;
     [self.unfoldedCells removeObject:ip];
     
     // remove the cell (data source already updated)
@@ -346,7 +346,8 @@
 
 - (void)applySelectRowAction:(BSStaticTableViewSelectRowAction *)action
 {
-    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    NSIndexPath *ip = action.indexPathsToApplyActionTo.firstObject;
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][ip.row];
     if (cellToPerformActionOn)
     {
         if ([cellToPerformActionOn conformsToProtocol:@protocol(BSTableViewSelectableCellProtocol)])
@@ -358,7 +359,8 @@
 
 - (void)applyDeselectRowAction:(BSStaticTableViewDeselectRowAction *)action
 {
-    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView cellForRowAtIndexPath:action.indexPath];
+    NSIndexPath *ip = action.indexPathsToApplyActionTo.firstObject;
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView cellForRowAtIndexPath:ip];
     if (cellToPerformActionOn)
     {
         if ([cellToPerformActionOn conformsToProtocol:@protocol(BSTableViewSelectableCellProtocol)])
@@ -371,7 +373,8 @@
 
 - (void)applyReloadRowFromModelAction:(BSStaticTableViewReloadCellFromModel *)action
 {
-    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][action.indexPath.row];
+    NSIndexPath *ip = action.indexPathsToApplyActionTo.firstObject;
+    BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][ip.row];
     [cellToPerformActionOn updateValuesFromModel];
 }
 

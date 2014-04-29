@@ -10,16 +10,4 @@
 
 @implementation BSStaticTableViewReloadCellFromModel
 
-- (instancetype)initWithIndexPath:(NSIndexPath *)indexPath
-{
-    self = [super init];
-    
-    if (self)
-    {
-        _indexPath = indexPath;
-    }
-    
-    return self;
-}
-
 @end
