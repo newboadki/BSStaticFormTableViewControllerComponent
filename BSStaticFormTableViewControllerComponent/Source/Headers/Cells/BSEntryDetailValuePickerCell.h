@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSArray *options;
 
+@property (nonatomic, strong) NSArray *optionImages;
+
 @end

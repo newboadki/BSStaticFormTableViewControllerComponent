@@ -23,6 +23,7 @@
     self.entryModel = model;
 
     [self setOptions:cellInfo.extraParams[@"options"]];
+    [self setOptionImages:cellInfo.extraParams[@"optionImages"]];
     UIPickerView *pickerView = (UIPickerView *)[self viewWithTag:333];
     pickerView.delegate = self; //why isn't IB doing this?
     pickerView.dataSource = self;
@@ -46,10 +47,10 @@
 
 #pragma mark - UIPickerViewDelegate
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return self.options[row];
-}
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+//{
+//    return self.options[row];
+//}
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -85,5 +86,25 @@
 {
     return [self.options count];
 }
+
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.optionImages[row]];
+    CGRect imageFrame = imageView.frame;
+    imageFrame.origin.x += 70;
+    imageView.frame = imageFrame;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame) + 40, 0, 100, imageView.frame.size.height)];
+
+
+    label.text = self.options[row];
+    
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.control.frame.size.width, imageView.frame.size.height)];
+    [customView addSubview:label];
+    [customView addSubview:imageView];
+    
+    return customView;
+}
+
 
 @end
