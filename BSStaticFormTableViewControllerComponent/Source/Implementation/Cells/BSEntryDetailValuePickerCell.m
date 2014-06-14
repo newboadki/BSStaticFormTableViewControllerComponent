@@ -47,11 +47,6 @@
 
 #pragma mark - UIPickerViewDelegate
 
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    return self.options[row];
-//}
-
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     // Change the model
@@ -70,7 +65,6 @@
     BSStaticTableViewCellChangeOfValueEvent *event = [[BSStaticTableViewCellChangeOfValueEvent alloc] initWithNewValue:[self.entryModel valueForKey:self.modelProperty] forPropertyName:self.modelProperty];
     event.indexPath = self.indexPath;
     [self.delegate cell:self eventOccurred:event];
-
 }
 
 
