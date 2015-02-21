@@ -94,13 +94,9 @@
 @end
 
 
+
+
 @implementation BSStaticFormTableViewController
-
-#pragma mark - Dealloc
-
-- (void)dealloc
-{
-}
 
 
 
@@ -386,7 +382,10 @@
         BSStaticTableViewCell *cellToPerformActionOn = (BSStaticTableViewCell *)[self.tableView visibleCells][ip.row];
         if (cellToPerformActionOn)
         {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [cellToPerformActionOn performSelector:action.selector withObject:action.object];
+            #pragma clang diagnostic pop
             //[self.pendingActions removeAction:action forIndexPath:ip];
         }
         else
@@ -422,5 +421,11 @@
     self.unfoldedCells = modifiedArray;
 }
 
+
+#pragma mark - BSStaticTableViewCellDelegateProtocol
+
+- (void) textFieldShouldreturn {
+    
+}
 
 @end
