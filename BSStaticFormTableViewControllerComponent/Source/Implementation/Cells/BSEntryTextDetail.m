@@ -60,6 +60,8 @@
 {
     UITextField *textField = (UITextField *)self.control;
     textField.textColor = self.positiveSignColor;
+    textField.text = [textField.text stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [self textFieldChanged:textField];
 }
 
 
@@ -67,6 +69,7 @@
 {
     UITextField *textField = (UITextField *)self.control;
     textField.textColor = self.negativeSignColor;
+    [self textFieldChanged:textField];
 }
 
 

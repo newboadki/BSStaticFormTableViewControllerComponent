@@ -52,12 +52,12 @@
     // Change the model
     if (self.valueConvertor)
     {
-        id modelValue = [self.valueConvertor modelValueForCellValue:@(row)];
+        id modelValue = [self.valueConvertor modelValueForCellValue:self.options[row]];
         [self.entryModel setValue:modelValue forKey:self.modelProperty];
     }
     else
     {
-        [self.entryModel setValue:@(row) forKey:self.modelProperty];
+        [self.entryModel setValue:self.options[row] forKey:self.modelProperty];
     }    
     
     
